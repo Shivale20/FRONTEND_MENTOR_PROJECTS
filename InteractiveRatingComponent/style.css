@@ -1,0 +1,151 @@
+:root {
+  --color-primary: hsl(25, 97%, 53%);
+  --color-primary-light: hsl(27, 60%, 97%);
+  --color-secondary: rgb(151, 150, 150);
+  --color-neutral-darker: hsl(216, 12%, 8%);
+  --color-neutral-dark: hsl(213, 19%, 18%);
+  --color-neutral: hsl(216, 12%, 54%);
+  --color-neutral-light: hsl(218, 13%, 24%);
+  --color-neutral-lighter: hsl(217, 12%, 63%);
+  --color-white: hsl(0, 0%, 100%);
+  --bg-body: var(--color-neutral-darker);
+  --bg-component: var(--color-neutral-dark);
+
+  --fs-base: 11px;
+  --fs-lg: 23px;
+  --ff-primary: "Overpass", sans-serif;
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+/* ================= RESET STYLES  =================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+  font-family: inherit;
+  line-height: 1;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100vw;
+  height: 100vh;
+  background: var(--bg-body);
+  font-family: var(--ff-primary);
+}
+/* =================FORM =================*/
+form,
+.thank-you-container {
+  width: 375px;
+  height: 370px;
+  margin: 25px;
+  padding: 28px;
+  border-radius: 20px;
+  background: var(--bg-component);
+}
+form {
+  display: grid;
+  grid-template-rows: auto;
+}
+
+form > h2 {
+  color: var(--color-white);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+}
+form > p,
+.rating-numbers label {
+  font-size: var(--fs-base);
+  color: var(--color-secondary);
+  font-weight: var(--fw-regular);
+  letter-spacing: 1px;
+  line-height: 2;
+}
+form > * {
+  /* outline: 1px solid red; */
+  padding: 0;
+}
+.rating-numbers {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+input[type="radio"] {
+  appearance: none;
+}
+input[type="radio"],
+.icon-star {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  background: var(--color-neutral-light);
+
+  text-decoration: none;
+  color: var(--color-secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type="radio"]:hover {
+  background: var(--color-neutral-lighter);
+  cursor: pointer;
+}
+.rating-numbers label {
+  position: absolute;
+  transform: translate(20px, -32px);
+  cursor: pointer;
+}
+label:hover {
+  color: var(--color-white);
+}
+button {
+  background: var(--color-primary);
+  outline: none;
+  border: none;
+  border-radius: 45px;
+  color: var(--color-primary-light);
+  letter-spacing: 1px;
+  font-size: var(--fs-base);
+  font-family: var(--ff-primary);
+}
+button:hover {
+  color: var(--color-primary);
+  cursor: pointer;
+  background: var(--color-primary-light);
+}
+/* =================thank you container =================*/
+.thank-you-container {
+  display: none;
+  align-items: center;
+  grid-auto-rows: auto;
+  text-align: center;
+}
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result > p {
+  width: max-content;
+  border-radius: 40px;
+  background: var(--color-neutral-light);
+  color: var(--color-primary);
+  padding: 10px 20px;
+  font-size: var(--fs-base);
+}
+.thank-you-container h2 {
+  color: var(--color-white);
+  font-size: var(--fs-lg);
+}
+.feedback {
+  font-size: var(--fs-base);
+  color: var(--color-secondary);
+  font-weight: var(--fw-regular);
+  letter-spacing: 1px;
+  line-height: 1.5;
+}

@@ -1,0 +1,162 @@
+:root {
+  --color-primary: hsl(238, 29%, 16%);
+  --color-secondary: hsl(14, 88%, 65%);
+  --color-neutral-darker: hsl(237, 12%, 33%);
+  --color-neutral-dark: hsl(240, 6%, 50%);
+  --color-neutral-light: hsl(240, 5%, 91%);
+  --color-background-primary: hsl(273, 75%, 66%);
+  --color-background-secondary: hsl(240, 73%, 65%);
+  --color-background-secondary-dark: hsl(258, 54%, 43%);
+  --radius: 25px;
+  --ff-primary: "Kumbh Sans", sans-serif;
+  --fs-small: 12px;
+  --fs-medium: 14px;
+  --text-primary: var(--color-primary);
+  --text-secondary: var(--color-secondary);
+  --text-neutral-darker: var(--color-neutral-darker);
+  --text-neutral-dark: var(--color-neutral-dark);
+  --text-neutral-light: var(--color-neutral-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card-container {
+  width: 100vw;
+  height: 100vh;
+
+  background: linear-gradient(
+    var(--color-background-primary) 50%,
+    var(--color-background-secondary)
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.accordion-card {
+  width: 920px;
+  height: auto;
+  background: white;
+  /* box-shadow: none|h-offset v-offset blur spread color */
+  box-shadow: 1px 30px 30px -10px var(--color-background-secondary-dark);
+  border-radius: var(--radius);
+  font-family: var(--ff-primary);
+
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  grid-template-areas: "image content";
+}
+.box {
+  position: absolute;
+  z-index: 1;
+  transform: translateX(-457px) translateY(30px);
+  display: inline-block;
+}
+.card-image-container {
+  grid-area: image;
+  position: relative;
+  overflow: hidden;
+}
+.pattern-desktop {
+  position: absolute;
+  transform: translateX(-62%) translateY(-31%);
+}
+.women-desktop {
+  position: absolute;
+  transform: translateX(-17%) translateY(16%) scale(0.9);
+}
+/* content - container  */
+.card-content-container {
+  grid-area: content;
+  padding: 85px 70px;
+}
+.faq-heading {
+  color: var(--text-primary);
+}
+.faq-details {
+  margin-top: 20px;
+}
+details > summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: var(--fs-medium);
+  font-weight: 400;
+  color: var(--text-neutral-darker);
+}
+
+details > summary:hover {
+  color: var(--text-secondary);
+}
+details[open] > summary {
+  color: var(--text-primary);
+  font-weight: bold;
+}
+details[open] > summary > i {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
+details {
+  padding-block: 15px;
+  border-bottom: 1px solid var(--color-neutral-light);
+}
+details > div {
+  font-size: var(--fs-small);
+  padding-top: 10px;
+  padding-right: 10px;
+  color: var(--text-neutral-dark);
+  opacity: 0.8;
+}
+
+@media (max-width: 375px) {
+  .card-container {
+    height: 100vh;
+    overflow: hidden;
+    /* box-shadow: none|h-offset v-offset blur spread color */
+    box-shadow: 1px 30px 30px -10px var(--color-background-secondary-dark);
+  }
+  .accordion-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "image"
+      "content";
+    margin: 20px;
+    height: auto;
+  }
+  .box {
+    visibility: hidden;
+  }
+  .card-image-container {
+    margin-bottom: 40px;
+    overflow: visible;
+  }
+  .pattern-desktop {
+    visibility: hidden;
+  }
+  .women-desktop {
+    visibility: hidden;
+  }
+  .pattern-mobile {
+    display: block;
+    position: absolute;
+    transform: translateX(20%);
+  }
+  .women-mobile {
+    display: block;
+    position: absolute;
+    transform: translateY(-56%) scale(0.7);
+  }
+  .faq-heading {
+    text-align: center;
+  }
+  .card-content-container {
+    padding-inline: 25px;
+  }
+}

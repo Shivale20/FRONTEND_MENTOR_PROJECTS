@@ -1,0 +1,186 @@
+:root {
+  --color-primary: hsl(158, 36%, 37%);
+  --color-primary-dark: hsl(157, 38%, 25%);
+  --color-secondary: hsl(30, 38%, 92%);
+  --color-neutral-darker: hsl(212, 21%, 14%);
+  --color-neutral-dark: hsl(228, 12%, 48%);
+  --color-neutral: #e9e9ed;
+  --color-white: hsl(0, 0%, 100%);
+
+  --ff-primary: "Montserrat", sans-serif;
+  --ff-secondary: "Fraunces", sans-serif;
+
+  --fs-xsm: 0.75rem;
+  --fs-sm: 18px;
+
+  --fs-lg: 2.8rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  --bg-body: var(--color-secondary);
+  --bg-white: var(--color-white);
+
+  --border-radius: 8px;
+  --p-x: 16px;
+  --p-y: 5px;
+  --p-x-lg: 32px;
+  --p-y-lg: 25px;
+}
+.text-decoration-line-through {
+  text-decoration: line-through;
+}
+.text-dark {
+  color: var(--color-neutral-darker);
+}
+.text-primary {
+  color: var(--color-primary);
+}
+.text-secondary {
+  color: var(--color-neutral-dark);
+  opacity: 0.7;
+}
+.text-white {
+  color: var(--color-white);
+}
+
+.font-primary {
+  font-family: var(--ff-primary);
+}
+.font-secondary {
+  font-family: var(--ff-secondary);
+}
+.fw-medium {
+  font-weight: var(--fw-medium);
+}
+.fw-bold {
+  font-weight: bolder;
+}
+.fs-sm {
+  font-size: var(--fs-sm);
+}
+.fs-base {
+  font-size: var(--fs-base);
+}
+.fs-lg {
+  font-size: var(--fs-lg);
+}
+.lh-lg {
+  line-height: 1.8;
+}
+.letter-space-1 {
+  letter-spacing: 4px;
+}
+.px-1 {
+  padding-inline: var(--p-x);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+  font-family: inherit;
+  line-height: 1;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 100vw;
+  height: 100vh;
+
+  background: var(--bg-body);
+}
+.media {
+  border-radius: 12px;
+
+  max-width: 800px;
+  height: auto;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "image content";
+}
+.perfume-img {
+  grid-area: image;
+}
+.perfume-desktop {
+  float: left;
+  width: 400px;
+  max-width: 100%;
+  height: 100%;
+}
+.perfume-mobile {
+  display: none;
+  max-width: 100%;
+  height: 100%;
+  grid-area: image;
+}
+/* clearfix*/
+.media:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.content {
+  grid-area: content;
+  padding: var(--p-x-lg) var(--p-y-lg);
+  display: grid;
+  align-content: space-between;
+  background: var(--color-white);
+}
+.content > * {
+  margin: 8px;
+}
+.prices {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.button-primary {
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--border-radius);
+  transition: all 300ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 10px;
+}
+.button-primary:is(:hover, :focus) {
+  background: var(--color-primary-dark);
+  cursor: pointer;
+}
+@media (max-width: 375px) {
+  .container {
+    padding: 28px;
+  }
+  .media {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "image" "content";
+  }
+
+  .perfume-mobile {
+    display: block;
+    object-fit: cover;
+    height: auto;
+  }
+  .perfume-desktop {
+    display: none;
+  }
+  h1 {
+    font-size: 1.8em !important;
+  }
+  p,
+  span {
+    font-size: 0.75em !important;
+  }
+}

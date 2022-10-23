@@ -1,0 +1,51 @@
+:root {
+  --color-blue: hsl(252, 80%, 60%);
+  --color-orange: hsl(15, 100%, 70%);
+  --color-Soft-blue: hsl(195, 74%, 62%);
+  --color-Light-red: hsl(348, 100%, 68%);
+  --color-Lime-green: hsl(145, 58%, 55%);
+  --color-Violet: hsl(264, 64%, 52%);
+  --color-Soft-orange: hsl(43, 84%, 65%);
+  --color-Very-dark-blue: hsl(226, 43%, 10%);
+  --color-Dark-blue: hsl(235, 46%, 20%);
+  --color-neutral-blue: hsl(236, 45%, 30%);
+  --color-Desaturated-blue: hsl(235, 45%, 61%);
+  --color-Pale-blue: hsl(236, 100%, 87%);
+
+  --background-work: var(--color-orange);
+  --background-play: var(--color-Soft-blue);
+  --background-study: var(--color-Light-red);
+  --background-exercise: var(--color-Lime-green);
+  --background-social: var(--color-Violet);
+  --background-self-care: var(--color-Soft-orange);
+  --background-profile: var(--color-blue);
+  --background-primary: var(--color-Very-dark-blue);
+  --background-secondary: var(--color-Dark-blue);
+  --background-tertiary: var(--color-neutral-blue);
+
+  --text-primary: #fff;
+  --text-secondary: var(--color-Pale-blue);
+
+  --ff-primary: "Rubik", sans-serif;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fs-base: 12px;
+  --fs-large: 16px;
+  --fs-larger: 44px;
+  --fs-medium-large: 35px;
+  --border-radius: 20px;
+  --row-gap: 30px;
+  --padding: 30px;
+
+  --fw-light-md: 100;
+  --fw-regular-md: 300;
+  --fw-medium-md: 400;
+  --fs-base-md: 10px;
+  --fs-large-md: 12px;
+  --fs-larger-md: 18px;
+  --fs-medium-large-md: 30px;
+  --border-radius-md: 10px;
+  --row-gap-md: 2px;
+  --padding-md: 15px;
+}
